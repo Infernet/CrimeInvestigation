@@ -10,6 +10,6 @@ namespace CrimeInvestigation.Classes
     {
         public AbstractHandler Successor { get; set; }
 
-        public abstract bool HandlerRequest(CriminalCase criminal);
+        public abstract void HandlerRequest(CriminalCase criminal);
     }
 }

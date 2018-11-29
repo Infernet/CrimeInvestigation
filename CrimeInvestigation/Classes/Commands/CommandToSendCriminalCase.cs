@@ -11,9 +11,9 @@ namespace CrimeInvestigation.Classes.Commands
     {
         IReceiver receiver;
 
-        public CommandToSendCriminalCase()
+        public CommandToSendCriminalCase(IReceiver receiver)
         {
-
+            this.receiver = receiver;
         }
 
         public void Execute()

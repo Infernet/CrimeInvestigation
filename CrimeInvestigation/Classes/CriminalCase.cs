@@ -11,6 +11,7 @@ namespace CrimeInvestigation.Classes
         public string Name { get;private set; }
         public int Complexity { get;private set; }
         public bool Disclosed { get; set; }
+        public string FullNamePoliceman { get; set; }
 
         public CriminalCase(string Name,int hard)
         {

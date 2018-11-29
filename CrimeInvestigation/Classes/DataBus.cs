@@ -9,7 +9,10 @@ using System.Drawing;
 
 namespace CrimeInvestigation.Classes
 {
-    class DataBus
+    /// <summary>
+    /// Статически класс для получения данных из файлов и изображений
+    /// </summary>
+    static class DataBus
     {
         public static List<string> GetRanks()
         {

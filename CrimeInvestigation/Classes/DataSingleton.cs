@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CrimeInvestigation.Classes.Comparers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -39,6 +40,16 @@ namespace CrimeInvestigation.Classes
             if (instance == null)
                 instance = new DataSingleton();
             return instance;
+        }
+
+        public void ChainCreate()
+        {
+            if (Policemen.Count > 1)
+            {
+                Policemen.Sort(new PolicemanByRank());
+                for (int i = 0; i < Policemen.Count - 1; i++)
+                    Policemen[i].Successor = Policemen[i + 1];
+            }
         }
     }
 }

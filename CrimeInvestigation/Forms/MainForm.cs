@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CrimeInvestigation.Forms
 {
-    public partial class MainMenu : BaseForm
+    public partial class MainForm : BaseForm
     {
-        public MainMenu()
+        public MainForm()
         {
             InitializeComponent();
         }

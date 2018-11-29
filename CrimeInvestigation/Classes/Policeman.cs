@@ -24,13 +24,26 @@ namespace CrimeInvestigation.Classes
             return String.Format("Имя -{0}, Фамилия- {1},Звание -{2}", FirstName, LastName, DataSingleton.GetInstance().Ranks[Rank]);
         }
 
-        public override bool HandlerRequest(CriminalCase criminal)
+        public override void HandlerRequest(CriminalCase criminal)
         {
             Random random = new Random();
-            if (random.Next(3, 2) == 3)
-                return true;
-            else
-                return false;
+            //если попытка удачная
+            //вероятность успеха (ранг, число рангов - ранг + сложность) успех если результат прока равен правой части
+            if (random.Next(this.Rank, DataSingleton.GetInstance().Ranks.Count - this.Rank + criminal.Complexity+1) == (DataSingleton.GetInstance().Ranks.Count-this.Rank+criminal.Complexity))
+            {
+                criminal.Disclosed = true;
+                criminal.FullNamePoliceman = this.FirstName + " " + this.LastName;
+                
+                if((this.Rank+1)<DataSingleton.GetInstance().Ranks.Count)
+                    this.Rank++;
+                DataSingleton.GetInstance().Logs.Add(DateTime.Now.ToString("hh:mm:ss") + "- Полицейский: " + this.ToString() + " раскрыл преступление");
+            }
+            else if (Successor != null)
+            {
+                DataSingleton.GetInstance().Logs.Add(DateTime.Now.ToString("hh:mm:ss") + "- Полицейский: " + this.ToString() + " не смог раскрыть преступление");
+                Successor.HandlerRequest(criminal);
+            }
+                
         }
     }
 }
