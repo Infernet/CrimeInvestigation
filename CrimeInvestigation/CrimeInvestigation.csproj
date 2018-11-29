@@ -57,12 +57,12 @@
     <Compile Include="Classes\AbstractHandler.cs" />
     <Compile Include="Classes\InvokerCommands.cs" />
     <Compile Include="Classes\Policeman.cs" />
-    <Compile Include="Classes\Recivers\AddCriminalCase.cs" />
-    <Compile Include="Classes\Recivers\AddPoliceman.cs" />
-    <Compile Include="Classes\Recivers\IReciever.cs" />
-    <Compile Include="Classes\Recivers\RemoveCriminalCase.cs" />
-    <Compile Include="Classes\Recivers\RemovePoliceman.cs" />
-    <Compile Include="Classes\Recivers\ToSendCriminalCase.cs" />
+    <Compile Include="Classes\Receivers\AddCriminalCase.cs" />
+    <Compile Include="Classes\Receivers\AddPoliceman.cs" />
+    <Compile Include="Classes\Receivers\Interfaces\IReceiver.cs" />
+    <Compile Include="Classes\Receivers\RemoveCriminalCase.cs" />
+    <Compile Include="Classes\Receivers\RemovePoliceman.cs" />
+    <Compile Include="Classes\Receivers\ToSendCriminalCase.cs" />
     <Compile Include="Forms\BaseForm.cs">
       <SubType>Form</SubType>
     </Compile>

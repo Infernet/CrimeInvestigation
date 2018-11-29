@@ -1,4 +1,4 @@
-﻿using CrimeInvestigation.Classes.Recivers;
+﻿using CrimeInvestigation.Classes.Receivers.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,21 +9,22 @@ namespace CrimeInvestigation.Classes.Commands
 {
     class CommandAddCriminalCase : ICommand
     {
-        private IReciever Reciver;
+        private IReceiver receiver;
 
         public string Name { get;private set; }
         public int Complexity { get;private set; }
 
-        public CommandAddCriminalCase(IReciever reciever,string name,int complexity)
+        public CommandAddCriminalCase(IReceiver reciever,string name,int complexity)
         {
-            this.Reciver = reciever;
+            this.receiver = reciever;
             this.Name = name;
             this.Complexity = complexity;
         }
 
         public void Execute()
         {
-            Reciver.Run(this);
+            if (receiver != null)
+                receiver.Run(new string[] { this.Name, this.Complexity.ToString() });
         }
     }
 }

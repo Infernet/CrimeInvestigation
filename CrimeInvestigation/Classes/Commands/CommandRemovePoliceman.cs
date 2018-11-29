@@ -1,4 +1,4 @@
-﻿using CrimeInvestigation.Classes.Recivers;
+﻿using CrimeInvestigation.Classes.Receivers.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,20 +9,17 @@ namespace CrimeInvestigation.Classes.Commands
 {
     class CommandRemovePoliceman : ICommand
     {
-        private IReciever reciever;
+        private IReceiver receiver;
 
-        public Policeman Policeman { get; private set; }
-
-        public CommandRemovePoliceman(IReciever reciever, Policeman policeman)
+        public CommandRemovePoliceman(IReceiver reciever)
         {
-            this.reciever = reciever;
-            this.Policeman = policeman;
+            this.receiver = reciever;
         }
 
 
         public void Execute()
         {
-            reciever.Run(this);
+            receiver.Run();
         }
     }
 }

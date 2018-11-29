@@ -5,10 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CrimeInvestigation.Classes.Recivers
+namespace CrimeInvestigation.Classes.Receivers.Interfaces
 {
-    interface IReciever
+    interface IReceiver
     {
-        void Run(ICommand command);
+        void Run(string [] args=null);
     }
 }

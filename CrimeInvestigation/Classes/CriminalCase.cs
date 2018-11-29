@@ -9,14 +9,19 @@ namespace CrimeInvestigation.Classes
     class CriminalCase
     {
         public string Name { get;private set; }
-        public int Сomplexity { get;private set; }
+        public int Complexity { get;private set; }
         public bool Disclosed { get; set; }
 
         public CriminalCase(string Name,int hard)
         {
             this.Name = Name;
-            this.Сomplexity = hard;
+            this.Complexity = hard;
             this.Disclosed = false;
+        }
+
+        public override string ToString()
+        {
+            return String.Format("Название -{0}, Сложность -{1}", Name, DataSingleton.GetInstance().Complexity[Complexity]);
         }
     }
 }

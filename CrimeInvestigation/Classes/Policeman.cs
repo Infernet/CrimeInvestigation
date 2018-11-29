@@ -19,6 +19,11 @@ namespace CrimeInvestigation.Classes
             this.Rank = rank;
         }
 
+        public override string ToString()
+        {
+            return String.Format("Имя -{0}, Фамилия- {1},Звание -{2}", FirstName, LastName, DataSingleton.GetInstance().Ranks[Rank]);
+        }
+
         public override bool HandlerRequest(CriminalCase criminal)
         {
             Random random = new Random();

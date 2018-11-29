@@ -21,6 +21,8 @@ namespace CrimeInvestigation.Classes
 
         public List<string> Complexity;
 
+        public List<string> Logs;
+
         private DataSingleton()
         {
             Policemen = new List<Policeman>();
@@ -29,6 +31,7 @@ namespace CrimeInvestigation.Classes
             Lnames = DataBus.GetLastNames();
             Ranks = DataBus.GetRanks();
             Complexity = DataBus.GetСomplexity();
+            Logs = new List<string>();
         }
 
         public static DataSingleton GetInstance()

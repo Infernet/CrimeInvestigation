@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CrimeInvestigation.Classes.Receivers.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,9 +9,16 @@ namespace CrimeInvestigation.Classes.Commands
 {
     class CommandToSendCriminalCase : ICommand
     {
+        IReceiver receiver;
+
+        public CommandToSendCriminalCase()
+        {
+
+        }
+
         public void Execute()
         {
-            throw new NotImplementedException();
+            receiver.Run();
         }
     }
 }
