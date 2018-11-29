@@ -17,14 +17,24 @@ namespace CrimeInvestigation.Forms
             InitializeComponent();
         }
 
-        protected void ShowNextForm(BaseForm nextForm)
+        protected void ShowNextForm(BaseForm nextForm,bool enableForm=true)
         {
             nextForm.StartPosition = FormStartPosition.Manual;
             nextForm.Location = this.Location;
 
-            this.Hide();
-            nextForm.ShowDialog();
-            this.Show();
+            if(enableForm)
+            {
+                this.Enabled = false;
+                nextForm.ShowDialog();
+                this.Enabled = true;
+            }
+            else
+            {
+                this.Hide();
+                nextForm.ShowDialog();
+                this.Show();
+            }
+            
         }
     }
 }

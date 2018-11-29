@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CrimeInvestigation.Classes.Receivers.Interfaces
+namespace CrimeInvestigation.Classes.Receivers
 {
     interface IReceiver
     {

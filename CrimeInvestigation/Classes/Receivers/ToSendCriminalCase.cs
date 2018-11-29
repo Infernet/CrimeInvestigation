@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CrimeInvestigation.Classes.Receivers.Interfaces;
+using CrimeInvestigation.Classes.Receivers;
 
 namespace CrimeInvestigation.Classes.Receivers
 {

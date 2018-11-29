@@ -17,32 +17,32 @@ namespace CrimeInvestigation.Classes
         public static List<string> GetRanks()
         {
             List<string> ranks = new List<string>();
-            ranks=File.ReadAllLines(Application.StartupPath + @"Resources\Text\Policeman\Ranks.txt").ToList();
+            ranks=File.ReadAllLines(Application.StartupPath + @"\Resources\Text\Policeman\Ranks.txt").ToList();
             return ranks;
         }
         public static List<string> GetFirstNames()
         {
             List<string> fNames = new List<string>();
-            fNames = File.ReadAllLines(Application.StartupPath + @"Resources\Text\Policeman\FirstNames.txt").ToList();
+            fNames = File.ReadAllLines(Application.StartupPath + @"\Resources\Text\Policeman\FirstNames.txt").ToList();
             return fNames;
         }
         public static List<string> GetLastNames()
         {
             List<string> lNames = new List<string>();
-            lNames = File.ReadAllLines(Application.StartupPath + @"Resources\Text\Policeman\LastNames.txt").ToList();
+            lNames = File.ReadAllLines(Application.StartupPath + @"\Resources\Text\Policeman\LastNames.txt").ToList();
             return lNames;
         }
 
         public static List<string> GetСomplexity()
         {
             List<string> Complexity = new List<string>();
-            Complexity = File.ReadAllLines(Application.StartupPath + @"Resources\Text\Criminal\Сomplexity.txt").ToList();
+            Complexity = File.ReadAllLines(Application.StartupPath + @"\Resources\Text\Criminal\Сomplexity.txt").ToList();
             return Complexity;
         }
         public static Image GetCriminalImage(int number)
         {
             Image image;
-            string path = Application.StartupPath + @"Resources\Images\Criminal\" + number + @".txt";
+            string path = Application.StartupPath + @"\Resources\Images\Criminal\" + number + @".png";
             if (File.Exists(path))
                 image = Image.FromFile(path);
             else

@@ -61,7 +61,7 @@
     <Compile Include="Classes\Policeman.cs" />
     <Compile Include="Classes\Receivers\AddCriminalCase.cs" />
     <Compile Include="Classes\Receivers\AddPoliceman.cs" />
-    <Compile Include="Classes\Receivers\Interfaces\IReceiver.cs" />
+    <Compile Include="Classes\Receivers\IReceiver.cs" />
     <Compile Include="Classes\Receivers\RemoveCriminalCase.cs" />
     <Compile Include="Classes\Receivers\RemovePoliceman.cs" />
     <Compile Include="Classes\Receivers\ToSendCriminalCase.cs" />
@@ -106,6 +106,12 @@
     <EmbeddedResource Include="Forms\BaseForm.resx">
       <DependentUpon>BaseForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CreatePolicemanForm.resx">
+      <DependentUpon>CreatePolicemanForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CreatePriminalCase.resx">
+      <DependentUpon>CreatePriminalCase.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -118,6 +124,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

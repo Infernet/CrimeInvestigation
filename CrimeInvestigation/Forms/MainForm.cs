@@ -16,5 +16,15 @@ namespace CrimeInvestigation.Forms
         {
             InitializeComponent();
         }
+
+        private void buttonAddPoliceman_Click(object sender, EventArgs e)
+        {
+            this.ShowNextForm(new CreatePolicemanForm());
+        }
+
+        private void buttonAddCriminal_Click(object sender, EventArgs e)
+        {
+            this.ShowNextForm(new CreateCriminalCase());
+        }
     }
 }

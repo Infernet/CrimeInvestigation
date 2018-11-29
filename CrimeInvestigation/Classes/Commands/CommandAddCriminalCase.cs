@@ -1,4 +1,4 @@
-﻿using CrimeInvestigation.Classes.Receivers.Interfaces;
+﻿using CrimeInvestigation.Classes.Receivers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
