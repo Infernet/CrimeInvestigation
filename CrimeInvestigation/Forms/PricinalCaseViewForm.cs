@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CrimeInvestigation
+namespace CrimeInvestigation.Forms
 {
-    public partial class Form1 : Form
+    public partial class PricinalCaseViewForm : BaseForm
     {
-        public Form1()
+        public PricinalCaseViewForm()
         {
             InitializeComponent();
         }

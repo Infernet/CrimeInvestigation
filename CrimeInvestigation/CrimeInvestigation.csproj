@@ -45,14 +45,65 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Classes\Commands\CommandAddCriminalCase.cs" />
+    <Compile Include="Classes\Commands\CommandAddPoliceman.cs" />
+    <Compile Include="Classes\Commands\CommandRemoveCriminalCase.cs" />
+    <Compile Include="Classes\Commands\CommandRemovePoliceman.cs" />
+    <Compile Include="Classes\Commands\CommandToSendCriminalCase.cs" />
+    <Compile Include="Classes\Commands\ICommand.cs" />
+    <Compile Include="Classes\CriminalCase.cs" />
+    <Compile Include="Classes\DataBus.cs" />
+    <Compile Include="Classes\DataSingleton.cs" />
+    <Compile Include="Classes\AbstractHandler.cs" />
+    <Compile Include="Classes\InvokerCommands.cs" />
+    <Compile Include="Classes\Policeman.cs" />
+    <Compile Include="Classes\Recivers\AddCriminalCase.cs" />
+    <Compile Include="Classes\Recivers\AddPoliceman.cs" />
+    <Compile Include="Classes\Recivers\IReciever.cs" />
+    <Compile Include="Classes\Recivers\RemoveCriminalCase.cs" />
+    <Compile Include="Classes\Recivers\RemovePoliceman.cs" />
+    <Compile Include="Classes\Recivers\ToSendCriminalCase.cs" />
+    <Compile Include="Forms\BaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Forms\BaseForm.Designer.cs">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CreatePolicemanForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CreatePolicemanForm.Designer.cs">
+      <DependentUpon>CreatePolicemanForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CreatePriminalCase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CreatePriminalCase.Designer.cs">
+      <DependentUpon>CreatePriminalCase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainMenu.Designer.cs">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PolicemanViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PolicemanViewForm.Designer.cs">
+      <DependentUpon>PolicemanViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PricinalCaseViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PricinalCaseViewForm.Designer.cs">
+      <DependentUpon>PricinalCaseViewForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\BaseForm.resx">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -74,6 +125,19 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Resources\Images\Criminal\1.png" />
+    <Content Include="Resources\Images\Criminal\2.png" />
+    <Content Include="Resources\Images\Criminal\3.png" />
+    <Content Include="Resources\Images\Criminal\4.png" />
+    <Content Include="Resources\Images\Criminal\5.png" />
+    <Content Include="Resources\Images\Policeman\Policeman.png" />
+    <Content Include="Resources\Text\Criminal\Сomplexity.txt" />
+    <Content Include="Resources\Text\Policeman\Ranks.txt" />
+    <Content Include="Resources\Text\Policeman\FirstNames.txt" />
+    <Content Include="Resources\Text\Policeman\LastNames.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
