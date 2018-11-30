@@ -124,9 +124,9 @@
             this.label2.Font = new System.Drawing.Font("Times New Roman", 9.75F);
             this.label2.Location = new System.Drawing.Point(10, 44);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(31, 15);
+            this.label2.Size = new System.Drawing.Size(59, 15);
             this.label2.TabIndex = 4;
-            this.label2.Text = "Имя";
+            this.label2.Text = "Название";
             // 
             // textBoxComplexity
             // 
