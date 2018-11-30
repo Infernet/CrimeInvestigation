@@ -19,9 +19,13 @@ namespace CrimeInvestigation.Classes
         public List<string> FNames;
         public List<string> Lnames;
         public List<string> Ranks;
-
+        //Списки для уголовных дел
+        //Сложность
         public List<string> Complexity;
+        //Названия
+        public List<string> CriminalNames;
 
+        //Логи
         public List<string> Logs;
 
         private DataSingleton()
@@ -32,6 +36,7 @@ namespace CrimeInvestigation.Classes
             Lnames = DataBus.GetLastNames();
             Ranks = DataBus.GetRanks();
             Complexity = DataBus.GetСomplexity();
+            CriminalNames = DataBus.GetCriminalNames();
             Logs = new List<string>();
         }
 
@@ -47,6 +52,8 @@ namespace CrimeInvestigation.Classes
             if (Policemen.Count > 1)
             {
                 Policemen.Sort(new PolicemanByRank());
+                foreach (Policeman item in Policemen)
+                    item.Successor = null;
                 for (int i = 0; i < Policemen.Count - 1; i++)
                     Policemen[i].Successor = Policemen[i + 1];
             }

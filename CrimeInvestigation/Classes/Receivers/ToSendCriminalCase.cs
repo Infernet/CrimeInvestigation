@@ -13,11 +13,21 @@ namespace CrimeInvestigation.Classes.Receivers
         {
             if(DataSingleton.GetInstance().CurrentCriminalCase!=null && DataSingleton.GetInstance().Policemen.Count!=0)
             {
-                DataSingleton.GetInstance().CurrentPoliceman.HandlerRequest(DataSingleton.GetInstance().CurrentCriminalCase);
-                if (DataSingleton.GetInstance().CurrentCriminalCase.Disclosed)
-                    DataSingleton.GetInstance().Logs.Add(DateTime.Now.ToString("hh:mm:ss") + "- Успешное раскрытие преступления, полицейский:" + DataSingleton.GetInstance().CurrentCriminalCase.FullNamePoliceman);
+                if (!DataSingleton.GetInstance().CurrentCriminalCase.Disclosed)
+                {
+
+
+                    DataSingleton.GetInstance().Policemen[0].HandlerRequest(DataSingleton.GetInstance().CurrentCriminalCase);
+                    if (DataSingleton.GetInstance().CurrentCriminalCase.Disclosed)
+                    {
+                        DataSingleton.GetInstance().Logs.Add(DateTime.Now.ToString("HH:mm:ss") + "- Успешное раскрытие преступления, полицейский:\t" + DataSingleton.GetInstance().CurrentCriminalCase.FullNamePoliceman);
+                        DataSingleton.GetInstance().ChainCreate();
+                    }
+                    else
+                        DataSingleton.GetInstance().Logs.Add(DateTime.Now.ToString("HH:mm:ss") + "- Преступление:\t" + DataSingleton.GetInstance().CurrentCriminalCase + " не было раскрыто");
+                }
                 else
-                    DataSingleton.GetInstance().Logs.Add(DateTime.Now.ToString("hh:mm:ss") + "- Преступление,"+DataSingleton.GetInstance().CurrentCriminalCase+" не было раскрыто");
+                    DataSingleton.GetInstance().Logs.Add(DateTime.Now.ToString("HH:mm:ss") + "- Преступление:\t" + DataSingleton.GetInstance().CurrentCriminalCase + " уже раскрыто");
             }
         }
     }

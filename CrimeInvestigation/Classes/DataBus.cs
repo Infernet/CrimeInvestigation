@@ -23,26 +23,46 @@ namespace CrimeInvestigation.Classes
         public static List<string> GetFirstNames()
         {
             List<string> fNames = new List<string>();
-            fNames = File.ReadAllLines(Application.StartupPath + @"\Resources\Text\Policeman\FirstNames.txt").ToList();
+            fNames = File.ReadAllText(Application.StartupPath + @"\Resources\Text\Policeman\FirstNames.txt").Split(new char[] {'\r','\t','\n'},StringSplitOptions.RemoveEmptyEntries).ToList();
+            
             return fNames;
         }
+
+        public static Image GetPolicemanImage(int rank)
+        {
+            Image image;
+            string path = Application.StartupPath + @"\Resources\Images\Policeman\" + (rank+1) + @".png";
+            if (File.Exists(path))
+                image = Image.FromFile(path);
+            else
+                image = (Image)(new Bitmap(300, 300));
+            return image;
+        }
+
         public static List<string> GetLastNames()
         {
             List<string> lNames = new List<string>();
-            lNames = File.ReadAllLines(Application.StartupPath + @"\Resources\Text\Policeman\LastNames.txt").ToList();
+            lNames = File.ReadAllText(Application.StartupPath + @"\Resources\Text\Policeman\LastNames.txt").Split(new char[] { '\r', '\t', '\n' }, StringSplitOptions.RemoveEmptyEntries).ToList(); ;
             return lNames;
+        }
+
+        public static List<string> GetCriminalNames()
+        {
+            List<string> names = new List<string>();
+            names = File.ReadAllText(Application.StartupPath + @"\Resources\Text\Criminal\Names.txt").Split(new char[] { '\r', '\t', '\n' }, StringSplitOptions.RemoveEmptyEntries).ToList(); ;
+            return names;
         }
 
         public static List<string> GetСomplexity()
         {
             List<string> Complexity = new List<string>();
-            Complexity = File.ReadAllLines(Application.StartupPath + @"\Resources\Text\Criminal\Сomplexity.txt").ToList();
+            Complexity = File.ReadAllText(Application.StartupPath + @"\Resources\Text\Criminal\Сomplexity.txt").Split(new char[] { '\r', '\t', '\n' }, StringSplitOptions.RemoveEmptyEntries).ToList(); ;
             return Complexity;
         }
         public static Image GetCriminalImage(int number)
         {
             Image image;
-            string path = Application.StartupPath + @"\Resources\Images\Criminal\" + number + @".png";
+            string path = Application.StartupPath + @"\Resources\Images\Criminal\" + (number+1) + @".png";
             if (File.Exists(path))
                 image = Image.FromFile(path);
             else

@@ -1,6 +1,6 @@
 ﻿namespace CrimeInvestigation.Forms
 {
-    partial class PolicemanViewForm
+    partial class CriminalCaseViewForm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,11 +30,13 @@
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBoxAddData = new System.Windows.Forms.GroupBox();
-            this.textBoxRank = new System.Windows.Forms.TextBox();
+            this.textBoxPoliceman = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBoxStatus = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBoxLName = new System.Windows.Forms.TextBox();
-            this.textBoxFName = new System.Windows.Forms.TextBox();
+            this.textBoxComplexity = new System.Windows.Forms.TextBox();
+            this.textBoxName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureAvatar = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1.SuspendLayout();
@@ -56,15 +58,17 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 48F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(580, 317);
-            this.tableLayoutPanel1.TabIndex = 2;
+            this.tableLayoutPanel1.TabIndex = 3;
             // 
             // groupBoxAddData
             // 
-            this.groupBoxAddData.Controls.Add(this.textBoxRank);
+            this.groupBoxAddData.Controls.Add(this.textBoxPoliceman);
+            this.groupBoxAddData.Controls.Add(this.label4);
+            this.groupBoxAddData.Controls.Add(this.textBoxStatus);
             this.groupBoxAddData.Controls.Add(this.label3);
             this.groupBoxAddData.Controls.Add(this.label2);
-            this.groupBoxAddData.Controls.Add(this.textBoxLName);
-            this.groupBoxAddData.Controls.Add(this.textBoxFName);
+            this.groupBoxAddData.Controls.Add(this.textBoxComplexity);
+            this.groupBoxAddData.Controls.Add(this.textBoxName);
             this.groupBoxAddData.Controls.Add(this.label1);
             this.groupBoxAddData.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBoxAddData.Font = new System.Drawing.Font("Times New Roman", 9.75F);
@@ -74,61 +78,83 @@
             this.groupBoxAddData.Size = new System.Drawing.Size(222, 311);
             this.groupBoxAddData.TabIndex = 1;
             this.groupBoxAddData.TabStop = false;
-            this.groupBoxAddData.Text = "Личные данные";
+            this.groupBoxAddData.Text = "Информация";
             // 
-            // textBoxRank
+            // textBoxPoliceman
             // 
-            this.textBoxRank.Enabled = false;
-            this.textBoxRank.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxRank.Location = new System.Drawing.Point(13, 168);
-            this.textBoxRank.Name = "textBoxRank";
-            this.textBoxRank.Size = new System.Drawing.Size(196, 22);
-            this.textBoxRank.TabIndex = 6;
+            this.textBoxPoliceman.Enabled = false;
+            this.textBoxPoliceman.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxPoliceman.Location = new System.Drawing.Point(13, 225);
+            this.textBoxPoliceman.Name = "textBoxPoliceman";
+            this.textBoxPoliceman.Size = new System.Drawing.Size(196, 22);
+            this.textBoxPoliceman.TabIndex = 8;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 9.75F);
+            this.label4.Location = new System.Drawing.Point(10, 209);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(98, 15);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Кто расследовал";
+            // 
+            // textBoxStatus
+            // 
+            this.textBoxStatus.Enabled = false;
+            this.textBoxStatus.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxStatus.Location = new System.Drawing.Point(13, 168);
+            this.textBoxStatus.Name = "textBoxStatus";
+            this.textBoxStatus.Size = new System.Drawing.Size(196, 22);
+            this.textBoxStatus.TabIndex = 6;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 9.75F);
             this.label3.Location = new System.Drawing.Point(10, 97);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 15);
+            this.label3.Size = new System.Drawing.Size(68, 15);
             this.label3.TabIndex = 5;
-            this.label3.Text = "Фамилия";
+            this.label3.Text = "Сложность";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 9.75F);
             this.label2.Location = new System.Drawing.Point(10, 44);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(31, 15);
             this.label2.TabIndex = 4;
             this.label2.Text = "Имя";
             // 
-            // textBoxLName
+            // textBoxComplexity
             // 
-            this.textBoxLName.Enabled = false;
-            this.textBoxLName.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxLName.Location = new System.Drawing.Point(13, 113);
-            this.textBoxLName.Name = "textBoxLName";
-            this.textBoxLName.Size = new System.Drawing.Size(196, 22);
-            this.textBoxLName.TabIndex = 3;
+            this.textBoxComplexity.Enabled = false;
+            this.textBoxComplexity.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxComplexity.Location = new System.Drawing.Point(13, 113);
+            this.textBoxComplexity.Name = "textBoxComplexity";
+            this.textBoxComplexity.Size = new System.Drawing.Size(196, 22);
+            this.textBoxComplexity.TabIndex = 3;
             // 
-            // textBoxFName
+            // textBoxName
             // 
-            this.textBoxFName.Enabled = false;
-            this.textBoxFName.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxFName.Location = new System.Drawing.Point(13, 60);
-            this.textBoxFName.Name = "textBoxFName";
-            this.textBoxFName.Size = new System.Drawing.Size(196, 22);
-            this.textBoxFName.TabIndex = 2;
+            this.textBoxName.Enabled = false;
+            this.textBoxName.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxName.Location = new System.Drawing.Point(13, 60);
+            this.textBoxName.Name = "textBoxName";
+            this.textBoxName.Size = new System.Drawing.Size(196, 22);
+            this.textBoxName.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 9.75F);
             this.label1.Location = new System.Drawing.Point(10, 152);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 15);
+            this.label1.Size = new System.Drawing.Size(44, 15);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Звание";
+            this.label1.Text = "Статус";
             // 
             // pictureAvatar
             // 
@@ -139,15 +165,15 @@
             this.pictureAvatar.TabIndex = 2;
             this.pictureAvatar.TabStop = false;
             // 
-            // PolicemanViewForm
+            // CriminalCaseViewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(580, 317);
             this.Controls.Add(this.tableLayoutPanel1);
             this.MinimizeBox = false;
-            this.Name = "PolicemanViewForm";
-            this.Text = "Карточка полицейского";
+            this.Name = "CriminalCaseViewForm";
+            this.Text = "Обзор уголовного дела";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.groupBoxAddData.ResumeLayout(false);
             this.groupBoxAddData.PerformLayout();
@@ -160,12 +186,14 @@
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.GroupBox groupBoxAddData;
+        private System.Windows.Forms.TextBox textBoxStatus;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBoxLName;
-        private System.Windows.Forms.TextBox textBoxFName;
+        private System.Windows.Forms.TextBox textBoxComplexity;
+        private System.Windows.Forms.TextBox textBoxName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureAvatar;
-        private System.Windows.Forms.TextBox textBoxRank;
+        private System.Windows.Forms.TextBox textBoxPoliceman;
+        private System.Windows.Forms.Label label4;
     }
 }

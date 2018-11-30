@@ -75,6 +75,8 @@
             this.groupBoxAddData.Controls.Add(this.textBoxName);
             this.groupBoxAddData.Controls.Add(this.comboComplexity);
             this.groupBoxAddData.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBoxAddData.Font = new System.Drawing.Font("Times New Roman", 9.75F);
+            this.groupBoxAddData.ForeColor = System.Drawing.Color.White;
             this.groupBoxAddData.Location = new System.Drawing.Point(3, 373);
             this.groupBoxAddData.Name = "groupBoxAddData";
             this.groupBoxAddData.Size = new System.Drawing.Size(464, 103);
@@ -85,9 +87,9 @@
             // checkBoxRandom
             // 
             this.checkBoxRandom.AutoSize = true;
-            this.checkBoxRandom.Location = new System.Drawing.Point(293, 76);
+            this.checkBoxRandom.Location = new System.Drawing.Point(280, 70);
             this.checkBoxRandom.Name = "checkBoxRandom";
-            this.checkBoxRandom.Size = new System.Drawing.Size(116, 17);
+            this.checkBoxRandom.Size = new System.Drawing.Size(129, 19);
             this.checkBoxRandom.TabIndex = 1;
             this.checkBoxRandom.Text = "Случайный выбор";
             this.checkBoxRandom.UseVisualStyleBackColor = true;
@@ -98,33 +100,36 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(3, 16);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 13);
+            this.label2.Size = new System.Drawing.Size(59, 15);
             this.label2.TabIndex = 4;
             this.label2.Text = "Название";
             // 
             // buttonSubmit
             // 
-            this.buttonSubmit.Location = new System.Drawing.Point(6, 70);
+            this.buttonSubmit.BackColor = System.Drawing.Color.DimGray;
+            this.buttonSubmit.Location = new System.Drawing.Point(6, 63);
             this.buttonSubmit.Name = "buttonSubmit";
-            this.buttonSubmit.Size = new System.Drawing.Size(116, 23);
+            this.buttonSubmit.Size = new System.Drawing.Size(116, 30);
             this.buttonSubmit.TabIndex = 0;
             this.buttonSubmit.Text = "Добавить";
-            this.buttonSubmit.UseVisualStyleBackColor = true;
+            this.buttonSubmit.UseVisualStyleBackColor = false;
+            this.buttonSubmit.Click += new System.EventHandler(this.buttonSubmit_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(277, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 13);
+            this.label1.Size = new System.Drawing.Size(68, 15);
             this.label1.TabIndex = 1;
             this.label1.Text = "Сложность";
             // 
             // textBoxName
             // 
+            this.textBoxName.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBoxName.Location = new System.Drawing.Point(6, 35);
             this.textBoxName.Name = "textBoxName";
-            this.textBoxName.Size = new System.Drawing.Size(240, 20);
+            this.textBoxName.Size = new System.Drawing.Size(240, 22);
             this.textBoxName.TabIndex = 2;
             this.textBoxName.TextChanged += new System.EventHandler(this.textBoxName_TextChanged);
             // 
@@ -134,7 +139,7 @@
             this.comboComplexity.FormattingEnabled = true;
             this.comboComplexity.Location = new System.Drawing.Point(280, 34);
             this.comboComplexity.Name = "comboComplexity";
-            this.comboComplexity.Size = new System.Drawing.Size(175, 21);
+            this.comboComplexity.Size = new System.Drawing.Size(175, 23);
             this.comboComplexity.TabIndex = 0;
             this.comboComplexity.SelectedIndexChanged += new System.EventHandler(this.comboComplexity_SelectedIndexChanged);
             // 
@@ -144,6 +149,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(470, 479);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.MinimizeBox = false;
             this.Name = "CreateCriminalCase";
             this.Text = "Оформление уголовного дела";
             this.tableLayoutPanel1.ResumeLayout(false);

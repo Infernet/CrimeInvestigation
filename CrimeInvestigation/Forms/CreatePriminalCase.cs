@@ -1,4 +1,6 @@
 ﻿using CrimeInvestigation.Classes;
+using CrimeInvestigation.Classes.Commands;
+using CrimeInvestigation.Classes.Receivers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -45,8 +47,31 @@ namespace CrimeInvestigation.Forms
 
         private void comboComplexity_SelectedIndexChanged(object sender, EventArgs e)
         {
-            pictureAvatar.Image=DataBus.GetCriminalImage(comboComplexity.SelectedIndex+1);
+            pictureAvatar.Image=DataBus.GetCriminalImage(comboComplexity.SelectedIndex);
             pictureAvatar.Refresh();
+        }
+
+        private void buttonSubmit_Click(object sender, EventArgs e)
+        {
+            string name;
+            int complexity;
+            if (checkBoxRandom.Checked)
+            {
+                Random random = new Random();
+                name = DataSingleton.GetInstance().CriminalNames[random.Next(DataSingleton.GetInstance().CriminalNames.Count)];
+                complexity= random.Next( DataSingleton.GetInstance().Complexity.Count);
+                InvokerCommands.GetInstance().SetCommand(new CommandAddCriminalCase(new AddCriminalCase(), name, complexity));
+                InvokerCommands.GetInstance().StartCommand();
+            }
+            else if (NameReg.IsMatch(textBoxName.Text))
+            {
+                name = textBoxName.Text;
+                complexity = comboComplexity.SelectedIndex;
+                InvokerCommands.GetInstance().SetCommand(new CommandAddCriminalCase(new AddCriminalCase(), name, complexity));
+                InvokerCommands.GetInstance().StartCommand();
+            }
+            else
+                MessageBox.Show("Введите имя уголовного дела", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
     }
 }

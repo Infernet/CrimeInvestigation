@@ -22,7 +22,7 @@ namespace CrimeInvestigation.Classes
 
         public override string ToString()
         {
-            return String.Format("Название -{0}, Сложность -{1}", Name, DataSingleton.GetInstance().Complexity[Complexity]);
+            return String.Format("{0}, Сложность -{1}", Name, DataSingleton.GetInstance().Complexity[Complexity]);
         }
     }
 }

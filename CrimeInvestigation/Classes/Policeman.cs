@@ -21,7 +21,7 @@ namespace CrimeInvestigation.Classes
 
         public override string ToString()
         {
-            return String.Format("Имя -{0}, Фамилия- {1},Звание -{2}", FirstName, LastName, DataSingleton.GetInstance().Ranks[Rank]);
+            return String.Format("{2}  {0} {1}", FirstName, LastName, DataSingleton.GetInstance().Ranks[Rank]);
         }
 
         public override void HandlerRequest(CriminalCase criminal)
@@ -29,20 +29,26 @@ namespace CrimeInvestigation.Classes
             Random random = new Random();
             //если попытка удачная
             //вероятность успеха (ранг, число рангов - ранг + сложность) успех если результат прока равен правой части
-            if (random.Next(this.Rank, DataSingleton.GetInstance().Ranks.Count - this.Rank + criminal.Complexity+1) == (DataSingleton.GetInstance().Ranks.Count-this.Rank+criminal.Complexity))
+            if (random.Next(this.Rank, (DataSingleton.GetInstance().Ranks.Count - 1) + criminal.Complexity + 1)
+                == ((DataSingleton.GetInstance().Ranks.Count - 1) + criminal.Complexity))
             {
                 criminal.Disclosed = true;
                 criminal.FullNamePoliceman = this.FirstName + " " + this.LastName;
-                
-                if((this.Rank+1)<DataSingleton.GetInstance().Ranks.Count)
+                DataSingleton.GetInstance().Logs.Add(DateTime.Now.ToString("HH:mm:ss") + "- Полицейский: " + this.ToString() + " раскрыл преступление");
+                if ((this.Rank + 1) < DataSingleton.GetInstance().Ranks.Count)
+                {
                     this.Rank++;
-                DataSingleton.GetInstance().Logs.Add(DateTime.Now.ToString("hh:mm:ss") + "- Полицейский: " + this.ToString() + " раскрыл преступление");
+                    DataSingleton.GetInstance().Logs.Add(DateTime.Now.ToString("HH:mm:ss") + "- Полицейский: " + LastName+ " "+FirstName + " повышен до звания: "+DataSingleton.GetInstance().Ranks[Rank]);
+                }
+                
             }
-            else if (Successor != null)
+            else
             {
-                DataSingleton.GetInstance().Logs.Add(DateTime.Now.ToString("hh:mm:ss") + "- Полицейский: " + this.ToString() + " не смог раскрыть преступление");
-                Successor.HandlerRequest(criminal);
+                DataSingleton.GetInstance().Logs.Add(DateTime.Now.ToString("HH:mm:ss") + "- Полицейский: " + this.ToString() + " не смог раскрыть преступление");
+                if (Successor != null)
+                    Successor.HandlerRequest(criminal);
             }
+
                 
         }
     }

@@ -13,12 +13,12 @@ namespace CrimeInvestigation.Classes.Receivers
         {
             if (DataSingleton.GetInstance().CurrentCriminalCase != null)
             {
-                DataSingleton.GetInstance().Logs.Add(DateTime.Now.ToString("hh:mm:ss") + "- Удаление уголовного дела:"+DataSingleton.GetInstance().CurrentCriminalCase);
+                DataSingleton.GetInstance().Logs.Add(DateTime.Now.ToString("HH:mm:ss") + "- Удалено уголовное дело:\t"+DataSingleton.GetInstance().CurrentCriminalCase);
                 DataSingleton.GetInstance().CriminalCases.Remove(DataSingleton.GetInstance().CurrentCriminalCase);
                 DataSingleton.GetInstance().CurrentCriminalCase = null;
             }
             else
-                DataSingleton.GetInstance().Logs.Add(DateTime.Now.ToString("hh:mm:ss") + "- Ошибка при попытке удалить уголовное дело из списка (удаляемый объект не выбран)");
+                DataSingleton.GetInstance().Logs.Add(DateTime.Now.ToString("HH:mm:ss") + "- Ошибка при попытке удалить уголовное дело из списка (удаляемый объект не выбран)");
         }
     }
 }

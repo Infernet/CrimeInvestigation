@@ -95,11 +95,11 @@
     <Compile Include="Forms\PolicemanViewForm.Designer.cs">
       <DependentUpon>PolicemanViewForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\PricinalCaseViewForm.cs">
+    <Compile Include="Forms\CriminalCaseViewForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\PricinalCaseViewForm.Designer.cs">
-      <DependentUpon>PricinalCaseViewForm.cs</DependentUpon>
+    <Compile Include="Forms\CriminalCaseViewForm.Designer.cs">
+      <DependentUpon>CriminalCaseViewForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -112,8 +112,14 @@
     <EmbeddedResource Include="Forms\CreatePriminalCase.resx">
       <DependentUpon>CreatePriminalCase.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CriminalCaseViewForm.resx">
+      <DependentUpon>CriminalCaseViewForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PolicemanViewForm.resx">
+      <DependentUpon>PolicemanViewForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -124,7 +130,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -145,7 +150,24 @@
     <Content Include="Resources\Images\Criminal\3.png" />
     <Content Include="Resources\Images\Criminal\4.png" />
     <Content Include="Resources\Images\Criminal\5.png" />
-    <Content Include="Resources\Images\Policeman\Policeman.png" />
+    <Content Include="Resources\Images\Policeman\1.png" />
+    <Content Include="Resources\Images\Policeman\10.png" />
+    <Content Include="Resources\Images\Policeman\11.png" />
+    <Content Include="Resources\Images\Policeman\12.png" />
+    <Content Include="Resources\Images\Policeman\13.png" />
+    <Content Include="Resources\Images\Policeman\14.png" />
+    <Content Include="Resources\Images\Policeman\15.png" />
+    <Content Include="Resources\Images\Policeman\16.png" />
+    <Content Include="Resources\Images\Policeman\17.png" />
+    <Content Include="Resources\Images\Policeman\2.png" />
+    <Content Include="Resources\Images\Policeman\3.png" />
+    <Content Include="Resources\Images\Policeman\4.png" />
+    <Content Include="Resources\Images\Policeman\5.png" />
+    <Content Include="Resources\Images\Policeman\6.png" />
+    <Content Include="Resources\Images\Policeman\7.png" />
+    <Content Include="Resources\Images\Policeman\8.png" />
+    <Content Include="Resources\Images\Policeman\9.png" />
+    <Content Include="Resources\Text\Criminal\Names.txt" />
     <Content Include="Resources\Text\Criminal\Сomplexity.txt" />
     <Content Include="Resources\Text\Policeman\Ranks.txt" />
     <Content Include="Resources\Text\Policeman\FirstNames.txt" />
