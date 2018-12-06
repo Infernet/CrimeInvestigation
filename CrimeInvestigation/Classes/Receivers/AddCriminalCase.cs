@@ -1,20 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using CrimeInvestigation.Classes.Commands;
-using CrimeInvestigation.Classes.Receivers;
 
 namespace CrimeInvestigation.Classes.Receivers
 {
     class AddCriminalCase : IReceiver
     {
-        public AddCriminalCase()
-        {
-
-        }
-
         public void Run(string[] args)
         {
             if(args!=null && args.Length==2)

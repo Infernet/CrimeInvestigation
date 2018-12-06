@@ -1,20 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using CrimeInvestigation.Classes.Commands;
-using CrimeInvestigation.Classes.Receivers;
 
 namespace CrimeInvestigation.Classes.Receivers
 {
     class AddPoliceman : IReceiver
     {
-        public AddPoliceman()
-        {
-
-        }
-
         public void Run(string[] args)
         {
             if(args.Length==3)
